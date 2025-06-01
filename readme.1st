@@ -1,0 +1,166 @@
+  PUBLIC DOMAIN COMPUTER PROGRAMS FOR THE AERONAUTICAL ENGINEER
+
+This file is the starting point for your exploration of this collection
+of computer programs for aeronautical engineers. My intent is to provide 
+an archive of useful code that will be of use to practicing engineers as 
+well as students of aeronautics and aviation enthusiasts.
+Most of the programs in this collection were originally developed by
+US Government agencies or their contractors for the purpose of 
+increasing the technology base in aeronautics. At the time of their 
+original release, most demanded the full resources of the most powerful
+supercomputers of the time. It is a tribute to the personal computer
+industry that they run in seconds on today's machines.
+
+There are files on the CD describing the contents:
+
+1. contents.pdf is a description of the various programs on the disc
+and a guide to finding the folder on the CD where the program files
+are to be found.
+
+2. MANIFEST is a directory listing of the CD listing all of the files
+by name with their sizes and date of last modification.
+
+
+INSTALLATION
+
+There is no installation procedure. Instead, I have set up the collection
+in a smorgasbord style - you just help yourself to the files you need.
+First read the file named MANIFEST. This is an text file describing the
+directory structure of the disc and the complete list of files supplied.
+The disc has what is frequently called a "flat structure" - there is a 
+separate directory for each program and no hierarchy. Each directory has 
+a file called readme.txt (sometimes readme1.txt, readme2.txt, etc.), 
+that describes the program and the associated files.
+
+There may also be one or more files with a .txt extension that is a
+description of the input to the program and the generated output.
+There may be a set of sample cases with both input and output files
+so you may check for proper execution.
+
+Usually, there will be a file with an .exe extension. This is the 
+executable file for the program under Microsoft Windows.
+These programs were compiled with gfortran and they only run under 
+Microsoft Windows. Four of the programs (VuCalc, LineInt, LinTerp, 
+and Quiz) were written with Borland Delphi (Standard Edition). 
+Pablo is unique in that it requires that you have MatLab installed
+on your machine (Student edition is OK).
+
+Sometimes, there will be a file with a .mac extension. This is the
+executable for Macintosh OS X. These were compiled with gfortran
+for the Macintosh. They will only run under OS X on a Macintosh
+with an Intel CPU. If you have an older Mac with the Power PC chip,
+send me an e-mail (ralph@pdas.com) and I will try to help you out.
+
+Sometimes, there will be a file with a .lnx extension. This is the
+executable for Linux. These were compiled with gfortran for Linux.
+I happen to work on a machine with Ubuntu 12.1, but this file should
+be compatible with any flavor of Linux. Read the file linux.txt for 
+additional comments about running with Linux.
+
+In general, for each program that you want from the CD-ROM, you should make
+a directory on your disk and copy all of the files from the program
+directory on the CD-ROM to that directory on your machine. Discard the ones that are
+not applicable to your platform. Sometimes, when copying a file from a CD-ROM,
+it is marked as read-only on the target machine. You will have to remove this
+before you can edit it. 
+
+GENERAL INSTRUCTIONS FOR EXECUTION OF PROGRAMS
+
+Windows: You run these programs by opening a MS-DOS Command Prompt window
+and launching the program from the command line by typing the name of the
+program (you may omit the .exe). You may find Command Prompt under
+Start | Programs | Accessories in the Windows menu system.
+If you launch a program by double-clicking its icon or entering the 
+program name under the File|Run menu, this 
+will open a command window that will automatically close when the program 
+terminates. There may be important messages that you want to read before
+dismissing the window. You will have to get used to using the command
+window and command line operations. These are old programs that were
+developed long before graphical user interfaces were even thought of.
+You should not try to run a program by setting the default drive to the 
+CDROM and beginning execution because the program will attempt to open 
+its output file on the CDROM. 
+
+Macintosh: You run these programs by opening a Terminal window and
+launching the program from the command line by typing the name of the
+program. Terminal will be found in the Application folder and you will
+probably want to keep it in the dock for quick access.
+If you launch the program by double-clicking its icon, this will open a 
+Terminal window that will automatically close when the program terminates. 
+There may be important messages that you want to read before
+dismissing the window. You will have to get used to using the Terminal
+window and command line operations. These are old programs that were
+developed long before graphical user interfaces were even thought of.
+You should not try to run a program by setting the default drive to the 
+CDROM and beginning execution because the program will attempt to open 
+its output file on the CDROM. 
+
+Linux: You run these programs by opening a terminal window and
+launching the program from the command line by typing the name of the
+program. You will have to get used to using the Terminal
+window and command line operations. These are old programs that were
+developed long before graphical user interfaces were even thought of.
+You should not try to run a program by setting the default drive to the 
+CDROM and beginning execution because the program will attempt to open 
+its output file on the CDROM. 
+
+All programs have the source code in the same directory as the executable.
+In the case of the atmosphere program, there are eight versions of the source
+code, each in a different programming language.
+
+PORTABLE DOCUMENT FORMAT (PDF) FILES.
+
+The files with an extension of .txt are simple ascii files and may be
+read with any editor or viewer. The files with an extension of .pdf
+are in portable document format. In order to read and print these
+files, you need a PDF viewer. All PDF viewers are free. Adobe Acrobat Reader 
+is the most commonly used viewer for Microsoft Windows. If you do not have
+Acrobat installed on your computer, you can download the latest version
+from  https://www.adobe.com. Every Macintosh comes with the Preview
+application installed and there are viewers for all Linux distributions.
+
+ADDITIONAL INFORMATION
+
+The files named covers.pdf and spines.pdf contain neatly formatted cover
+sheets and spines for loose leaf notebooks that let you slip a title page
+into the cover.
+The file legal.txt has some more details about the legal status of 
+the programs.
+Namelist input cases are all being changed to have the / character to
+denote the end of the data. There may still be a few files with & but I
+am moving quickly to all Fortran 95. Fortran 77 is a thing of the past.
+
+
+SUPPORT
+
+There is a world-wide-web site at https://www.pdas.com that is dedicated
+to the support of this collection of programs. There are pages for
+each program and for updates of the documentation and sample cases.
+There is a page devoted to the dreaded "bug reports".
+
+I want to hear of your experiences in using the programs. The best way
+to communicate with me is via my e-mail address at ralph@pdas.com.
+All of the web pages have mailto links at the bottom of each page to
+make it easy to send me an e-mail message and there is even US Mail at
+P.O. Box 1438, Santa Cruz CA 95061 USA.
+
+
+As stated in the disclaimer paragraph of legal.txt, all of these
+programs are supplied AS IS. It may be that there are errors in a
+program, either in the original version or inadvertently added by me. 
+If I can fix a problem or add an extension, I will do so,
+but as I am not the original author of most of these codes, I am somewhat
+reluctant to start serious mods to routines that I don't totally
+understand. 
+If you modify a code, I do ask that you mark the source code as being
+modified and include your name and e-mail address.
+
+This collection has contributions from aeronautical experts who have
+made their programs available to the community. We want to thank Steve
+Pietrobon from Australia for the atmosphere coding; Christian Wauquiez 
+and Art Rizzi for the Pablo program; and Igor Polyakov for the hypersonic
+aerodynamic support programs. Two versions of the atmosphere tables
+application were written by Martin Schultz and Rich Kwan. I would like
+to include more programs written by people outside the American national
+laboratories. Please consider making your work a contribution to the
+open source community.
