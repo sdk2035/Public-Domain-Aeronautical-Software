@@ -1,0 +1,50 @@
+
+
+INPUT GUIDE FOR PROGRAM ATC                                    \atc\input.txt
+
+The input to ATC is contained in four different files
+
+The main ATC file has three records
+
+Record 1: Aircraft identifier  (80 characters)
+Record 2: dt,ws,clao,alpha0,var (free format)
+Record 3: nr,nv,nd,nh (free format)
+  where
+    dt      = time difference, seconds
+    ws      = wing loading (weight/wingArea), pounds per square foot
+    clao    = lift-curve slope, per degree
+    alpha0  = angle of attack for zero lift, degrees
+    var     = magnetic var., degrees
+    nr      = number of points for smoothing pre-smooth
+    nv      = number of points for smoothing ground speed
+    nd      = number of points for smoothing track angle
+    nh      = number of points for smoothing altitude
+
+The wind file consists of wind direction and velocity as well as
+temperature for a number of altitudes. Each record has four data points,
+all real in free format, separated by blanks
+  altitude, thousands of feet   
+  wind direction, degrees
+  wind velocity, knots
+  temperature, degrees F
+There may be up to 20 records in the wind file.
+
+The radar file consists of position data for the aircraft as a
+time history. Each record has six data points:
+  time, hours    (integer)
+  time, minutes  (integer)
+  time, seconds  (integer)
+  x-range, nautical miles  (real)
+  y-range, nautical miles  (real)
+  altitude, feet           (real) 
+There may be up to 300 points in the radar file.
+
+The plot file consists of descriptions of the plotting parameters for each
+plot to be printed in the output file. Each plot description is made up of
+two records in format (I10,A30,2F10.2)
+
+  Record 1: ny, nwy, start,stop
+  Record 2: nx, nwx, startx, stopx
+
+
+There may be any number of plots.

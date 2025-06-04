@@ -1,0 +1,16 @@
+        23 EAST RANGE, N MI                 465.00    525.00
+        22 NORTH RANGE, N MI                230.00    270.00
+        27   TIME, SEC                        0.00   1200.00
+         1 ALTITUDE, FT                       0.00  30000.00
+        27   TIME, SEC                        0.00   1200.00
+        11 TRUE AIRSPEED, KNOTS             100.00    500.00
+        27   TIME, SEC                        0.00   1200.00
+        10 MAG HEADING, DEG                -160.00      0.00
+        27   TIME, SEC                        0.00   1200.00
+         8 ROLL ANGLE, DEG                  -40.00     40.00
+        27   TIME, SEC                        0.00   1200.00
+         9 PITCH ANGLE, DEG                 -10.00     10.00
+        27   TIME, SEC                        0.00   1200.00
+         6 LIFT, GS                           0.60      1.40
+        27   TIME, SEC                        0.00   1200.00
+         7 THRUST-DRAG, GS                   -0.40      0.40
