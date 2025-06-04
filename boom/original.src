@@ -1,0 +1,473 @@
+!
+      SUBROUTINE ALTA
+      INCLUDE 'common.inc'
+
+      DO 50 K=1,KEND
+      IF(ALT—Z(7,K)) 50,50,51
+   50 CONTINUE
+   51 KA=K
+      R=(ALT—Z17,KA))/(Z(79KA-1)—Z(7,KA))
+      DO 52 J=1,9
+      Z(J.1)=Z(JeKA)+R*(ZIJ,KA-1)—Z(J,KAI)
+      DO 53 K=KA,KEND
+      KK=K—KA+2
+   53   2(J-KK)=2(JoK)
+   52        CONTINUE
+      KEND=KEND—KA+2
+      G=(Z(3,1)/Z(2,1))**425/Z(391) 
+      BSV=VF/T*BONG**.75
+      BSA=FL*SORTF(WT/Z(2.1)/SORTF(A11 
+      RETURN
+      END
+
+      SUBROUTINE ONE
+      DIMENSION 2(9,100)+S(9),W(9),X(9),Y(9),PJ(7),0(9),AY(9),DATA(21+5,
+     1 2).PH1(21)
+      COMMON ZoKEND-CTH,STH.C.6•S.G.KO,DL.H.R10W,X,CloY.F.VS,VP,C2,AY,PJ 
+     leBSV,BSA,PHI.DATA,PRoUlAVS,JNR,NEND,ALT.EL,O,EZ.BSC.ELH,KASE.EM,EN
+     1,N+ACC,RC,BONG,NV.NN,JOBS,WT,T.WL,VF,FL,APR,BVP-TEST,AF.HH
+      COMMON CRV,PSI,TAU, P5015.XD,YD,ZD 0/T-MP
+
+      EZ=0.
+      B=EM*EM-1. 
+      AQ=SORTF(B)
+      D=SINF(PHI(N)/57.2958)
+      DQ=SORTF(1.0—D*D)
+      BSC=S0RTF(BSV**2+BSA**2*DO*BO/(B+1.0))
+      CPS=COSF(PSI/57.2958)
+      SPS=SINF(PSI/57.2958)
+     11        AA=SQRTF(D*D4-(CPS/B0+DO*SPS)**2)
+      STH=D/AA 
+      CTH=SCIPTF(1.0—STH**2)
+      ELH=•BQ*AA/EM
+      H=SQRTFII.—ELH*ELH)
+      HH=1.0/H 
+      C=2(3,1)/ELH
+      8.1=ACC/42(3,1)*EM)**2/B/ELH/CTH
+      BK=1.0—SPS*(SPS—CPS*DO*BQ)/H/H
+      BL=BJ*BK 
+      BM=CRV*DQ/EM/H/H
+      BN=SPS*D0-8Q*CPS+STH*D/CTH
+      BP=BM*BN
+   12        C1=BP—BL
+      C2=1.414*BSC*(EM**3/B)**.25
+   14 R1=1./(2(3.1)**1.5*SORTFIZ(2,1)*H))
+      DO 15 M=1,6
+   15        Y(M)=0.
+      W(1)=0.
+      W(2)=—ELH/H
+      W(3)=0.
+      W(4)=-1./(Z(3.1)*H)
+      W(5)=C1/H/H
+      Z(4,1)=0. 
+      215.1)=0. 
+      2(1,1)=0. 
+      Z(6.1)=14 
+      DO 8 K=2,KEND
+      Z(4-()=CTH*(Z(8,K)-2(8,1))+STH*(7.(9,K)—Z(9,1)) 
+      Z(5,K)=CTH*(Z(9,K)—Z(9,1))—STH*(Z(8,K)—Z(8,1)) 
+      B=2(40K)*Z(3,K)**2/(C-2(4.K))
+      V=Z(4,K)**2+Z(5,K)**2
+      Z(10()=(B+V)/SORTF(2(3,K)**2+V+2.*B)
+      DO 5 1=103
+    5 5(I)=.5*(ZII,K)+Z(I,K-1))
+      13=2(1,K)-2(1,K-1)
+      V=(2(2,K)-7(2,K-1))/S(2)
+      F=2.*(2(31K)—Z(3.K-1))/5(3)
+    8 Z160()=2(69K-1)*EXPF((B—.2*S(1)*(V—F))/(5(1)+S(3)))
+      0(1).(2(3,2)+Z(1.2)-2(301))/(Z(7.2)—Z(7.1))
+   13 W(6)=0(1)*ELH/C/H/H
+      DO 16 KZ=1,9
+   16 Q(KZ)=0.
+      RETURN
+      END
+
+      SUBROUTINE MID
+      DIMENSION ZI99100I,SI9I,W(9).XI9/9Y(9),PJ(71,Q(9),AY(9),DATAI21959 
+     1 2I-PHI(21)
+      COMMON Z,KEND,CTH,STH,C,B,S+G.KOOL,HoRlsW,X,CloY,F,VS,VP,C2,AY,PJ 
+     19BSV,B5A.PHI•DATA.PR,U,AV5pJNR,NENDtALT,EL,Q,EZ,BSC,ELH,KASE,EM,EN 
+     1,N-ACC+RC,BONG,NV,NN,JOBS,WT,T.WL,VF,FL'APR,EIVP,TEST,AF$HH 
+ 
+      SI7I=SI7I+DL
+      IFIS(7)-217+KEND/-5.165,65,61
+      65 DL=2(7,KEND)+DL—S(7)
+      SI7)=Z(7,KEND)
+   61 DO 62 K=KQ,KEND
+      IFISI7I—Z(7,K)162,63,63
+   62        CONTINUE
+   63        KQ=K-1
+      R=ISI7I—Z(7,K01)/(2(7,K0+1)-2(79KQII 
+      DO 64 J=1,6
+   64        S(J)=Z(JIIKO)+R*IZ(J,K0+1)—ZIJ,KOII
+      RETURN
+      END
+
+      SUBROUTINE LINT
+      DIMENSION Z(9,100),S19)0419),X(9).Y(9),PJ(7).0(91.AY(9),DATA(21,5, 
+     1 2),PHI(21)
+      COMMON ZOKEND,CTH,STH,C,B,S,GIKW.DL,H,R1.W.X.C1.Y.F.VS.VP.C2,AY,PJ 
+     1,BSVOSA.PHI.DATA,PR.U.AVS,JNR.NEND,ALT.EL.Q.EZ.BSC.ELHOCA5E,EM.EN 
+     loNtACCOC,BONG,NV.NN,JOBS.WT.T.WL,VF,FLIAPR,BVP,TEST,AF,HH
+      DO 24 K=2,K0
+      EL=Z(3,10/(C-2(4.K))
+      IF(ABSFIEL/—.999)20.21,21
+   21 Q(1)=1.
+      SI7I=Z(7,K)
+      GO TO 23
+   20 EN=—SORTF(1.—EL*EL)
+      X(4)=1./(Z(3.K)*EN)
+      X(3)=Z(5,K)*X(41
+      XI2/=(FL*Z(3,K)+Z(4.K))*X(4)
+      R2=SORTF(1.+X(3)'**2+X(2)**2I
+      X(5)=Cl*R2
+      ZOL=Z(7.K)-2(7.K-1)
+      B=I2(3.K)-2(3.K-1)//ZDL
+      BA=EL*(2(4,K)-2(4.K-11)/ZDL
+   26 X(6)=—EL*(B+BA)/C/EN/H
+      B=0.5*ZDL
+      DO 22 M=2,6
+      YIW=YIM/+B*IW(M)+X(M))
+   22        WIMI=X(M)
+   25        F=(1.+Y(5)+Y(6))/H
+      IF(F)27,27,29
+   27 F=F—Y(5)/H 
+      Y(5)=0.
+      W(5)=0.
+      C1=0.0
+      0(2)=1.0
+      0(41=2(7.K/
+      29 R4=R2/I(Z(3.K)+211+K))**2*SORTFIF*2(2.K)/Z(3,K))*Z(6,K)) 
+      XI1I=(R1—R4)/SORTFAZ(7.1)-217.KM
+      Y(1)=B*(1.4(1)+X(1))+Y(1)
+      W(1)=X(1) 
+   24        CONTINUE
+   23 RETURN
+      END
+ 
+
+     SUBROUTINE FIN
+      DIMENSION Z(9.100),S(9).W(9),X(9).Y(9).PJ(7).0(9).AY(9).DATA(21.5• 
+     1 21,PHI(21)
+      COMMON ZoKEND.CTH.STH.C.B.S.G.KOOL.H.R1.W•X.C1.Y,F.V.S.VP,C2.AY.PJ 
+     1.0BS\/,BSA,PHI.DATAOR,U.AV5,JNR,NEND,ALT,EL,O.EZ.BSC,ELH.KASEtEM,EN 
+     1.N.ACC.RC,BONG.NV.NN,JOBS,WT,T,WL.VF.FL.APR,BVP.TEST.AFtHH 
+
+      Y(1)=Y(1)+2.*R1*SORTF(Z(7,1)—S(7))
+      EL=S(3)/(C—S(4))
+      IF(ABSF(EL)—.999)26,27,27
+   27 0(1)=1.
+      GO TO 30
+   26 EN=—SORTF(1.—EL*EL)
+      X(4)=1./(EN*S(3))
+      X(31=S(5)*X(4)
+      X12)=AEL*5(3)+5(4))*X(4)
+      R2=SORTF(1.+X(2)**2+X(3)**2)
+  101=5(71—Z(7,K°)
+      B=(5(3)-2(3,K0)1/ZDL
+      BA=EL*(S14)—Z(4,KO))/ZDL.
+      X(5)=Cl*R2
+   23 X(6)=—EL*(B+BA)/C/EN/H
+      B=0.5*ZDL
+      DO 25 M=2,6
+      Y(M)=Y(M)+B*(X(M)+W(M))
+   25        W(M)=X(M)
+   24 F=(1.+Y(5)+Y(6))/H
+      IF(F) 34,34.37
+   34 F=F—Y(5)/H
+      C1=0.
+      0(2)=1.
+      Y(5)=0.0
+      W(5)=0.0
+      GO TO 37
+   37 R4=R2/1(S(3)+S(1))**2*5(6)*SORTF(F*S(2)/S(3))) 
+      X(1)=1R1—R4)/SORTF(Z(7,1)—S(7))
+      Y(1)=B*(W(1)+X(1))+Y(1)
+      W(1)=X(1)
+      W(1)=W(1)—R1/SORTF(Z(7.1)—S(7))
+   28 DL=217.K01
+      KL=KEND-1
+      DO 35 K=KO,KL
+      B=Z(7.1()'-2(7,K+1)
+   35        DL=MIN1F(DL,B)
+      DL=—.25*DL
+   29 B=G*S(6)*S(3)*S(3)
+      HA=SORTF(Y(1)*S(2)*F*(L(7,1)-5(71)/S(3))
+      PR=C2/B/HA
+      VS=S(3)*(1.+.4286*PR)
+      VP=(^/S—S(3))/DL
+   33 F=F*'(2(7.1)—S(7))
+   30 RETURN
+      END
+
+
+      SUBROUTINE INTEG
+      DIMENSION Z(9,100)*S(9),W19),X(919Y(9),PJ(7),0(9)9AY(91.DATA(2195, 
+     1 2),PHI(21)
+      COMMON ZOCEND,CTH,STH,C,B,S,G,KO,DL,H,R1,W,X,CloY,F,VS,VP,C2,AYWJ 
+     1,BSV,BSA,PHI,DATA,RR,U,AVS,JNR,NEND,ALT,EL,Q,EZ,BSC'ELH,KASE,EM,EN 
+     1019ACC,RC,BONGIINV,NN,JOBS94T,T,WL,VF.FL'APRIBVP,TEST,AF,HH
+
+   41        EL=—VS/(S14)—C)
+      IFIABSFIEL)—.999)415,43,43
+   43 OI1/=1*
+      GO TO 49
+      415 EN=—SORTF(1*—EL*EL)
+      X(4)=I./EN/VS
+      XI2)=AEL*VS+S(4)1*X(4)
+      X131=515/*X(4)
+      R2=SORTF(1.+X(2)**2+X(3)**2/
+      B1=15(4)—U/*EL/OL
+      X(5)=Cl*R2
+   44 X(6)=—EL*CV9+81//C/EN/H
+      B=0.5*DL
+      DO 42M=2,6
+   42        AY(M)=Y1M)443*IW(M)+X(M))
+      AF=1.+AY(5)+AY(6)
+      IF(AF—.01)489417.417
+      '8        AF=AF—AY(5)
+      Cl=0*
+      AY(5)=0.0 
+      Y(5)=0.0 
+      WI5I=0.0 
+      Q(5)=3.
+      417       F=IZ(7111)-5(7))*AF/H
+      416 X(1)=R2/S(6)/(15(31+S(11)**2*5QRTF(S(2)*F/S(3)II
+      XI11=—X(1) 
+      AY(1)=Y(1)+B*IW(1)+X(1))
+      B=G*S16)*S(3)**2
+      PR=.5*(C2/8/SORTF(AY(1)*S(2)*F/S(3))+APRI 
+      VS=4,5*(AVS+S(3)*(1*+.4286*RR))
+      VP=(VS—AVS)/OL
+   49 RETURN
+      END
+
+
+      CSBOOM
+      DIMENSION Z.(9,10U),S(9).W(9),X19),Y19),PJ(7).0(9)•AY(9).DAIA(21.5,
+     1 2),PHI(21)
+      COMMON ZoKENDtETH,S1H.C.B.S.G.KU.DL.H.I.O.W•X.C1.Y.F.W.).VP,C2,AY,PJ
+     11185VOSA,PHI,DATA,PR.U.AVS,JNR.NEND,ALT.LL'UtEL,BSCsELH,KASE,EM.LN 
+     1.N.ACC,IRC.BONG.NV.NN•JOBS,Witt.WL.VF.FL.APR.BVP.TEST.AE.HH
+      COMMON CRV,PSI.TAU. PS,TS.XD.YD.ZD IVT.MP
+
+  310 READ 200,KEND,NEND.KASE,NV.NN.JOB5
+      READ 201•(1(7*K1•7.(2•K1./(1,K).Z(8.K).Z19,K),K=1,KEND)
+      READ 202,(P11I(N),N=1.MEND)
+      READ 202.ACC.BONG.RCIIEM.ALT,VF.FL,WT,T,WL.CRV,PSI,TAU
+      UM=ASINF(1.0/EM) *57.2958 
+      IF (90.0-UM-PSI) 11,11,13 
+   11        PRINT 204,KASE,EM,ALT
+      PRINT 218
+  218       FORMAT (39HON0 SHOCKS Al GROUND DUE 10 CLIMB ANGLE)
+      GO TO 38
+   13        B=(ALT-100.*BONG)/1000.
+      IF(B-217,KEND/)12912$39 
+   12 PRINT 204, KASE,EM,ALT 
+      PRINT 213
+      GO TO 38
+   39 DO 11Z K=1,KFND
+      2179K)=Z(79K)*1000•
+      112 2(3.1(1=49.*SORTFIZ(19K)+459.6)
+    2 PRINT 205,KASEtEMIPALTPACCoRC,VF,FL.WT,BONGIT,WL ,PSI.TAU,CRV 
+      PRINT 206
+      PRINT 207,(Z(7•K).Z(8.K).L(9,K).2(2,K)a(31K)al1.K),K=1,KEND) 
+      DVC=0.0
+      MP=1
+      IF (ABSF(PSI) + ABSF(CRV)) 40,40.41
+   41        DVC=1.0
+      CALL CORR
+   40        CALL ALTA
+    1 DO 111 N=loNEND
+      N=N
+      DO 5 J=1,5
+      5 DATA(N.J,MP)=O. 
+      CALL ONE
+      S(7)=Z(7,1)-100.*ElONG*COSF(PHI(N)/57.3)
+C ACOUSTIC INITIAL INTEGRATION
+      14        K0=1
+      DL=O.
+      CALL MID
+      IF(KQ-1)J8,18,19 
+   19        CALL LINT
+      IFT0(2)-1.125,23,25 
+   23 Q(2)=0.
+      PRINT 216+Q(4),PHI(N) 
+   25 IF(Q(1)-1.)18.21,18 
+   18        CALL FIN
+      IF(Q(2)-1.)22.24,22
+   24 0(2)=0.
+      PRINT 216•S(7),PHI(N)
+   22 1E0:J(1)-1.120921,20
+   21 PRINT 215.5(7),PHIIN)
+      GO TO III
+      SHOCK INTEGRATION STARTS HERE
+   20 ADL=.75*DL
+      0LT=DL
+   80 U=S141 
+      AVS=VS 
+      BVP=VP
+   81        CALL MID
+   99 TEST=-2.
+   85        CALL INTEG
+   98 IF(011)-1./304,3
+    4 QI11=0.
+      IF (01+10.0) 78.31,31
+    3 IF1TEST+1./82,83,83
+   82 TEST=TEST+1.
+      APR=PR
+      GO TO 85
+   83 V=2.*ABSF(PR-APR)/(PR+APR/ 
+      IF(V-.01)86,86,87
+   87 TEST=TEST+1.
+      APR=PR
+      IF(TEST-10.0) 85,85,88
+   88 IFIDL+5.118,77977
+   78 S(7)=S(7)-DL
+      DL=2.5*D1
+   96 VS=AVS 
+      VP=BVP 
+      GO TO 81
+   77        PRINT 217,PHIM
+      GO TO 91
+   31 PRINT 2149PHIIN1
+   91 PRIM 211
+      DATA( N,4 9MP I =-1 •0
+      GO TO 90
+   86 IF(NN-N)89,37,89
+   37        IF (DVC-1.0) 45,45,89
+   45        IF (EZ) 36,36,90
+   36 EZ=1.
+      PRINT 2100(PHI(NN))
+      PRINT 211 
+   90 PJ(6)=S(2) 
+      PJ(4I=PR
+      PJ(5)=5(2)*PR
+      PJ(1)=S(7)
+      PJ(31=    AY(3)4ECTH+AY(2)*STH+AY(4)*Z(991)
+      PJI21=    AY(2)4CTH-AY(3)*STH+AY14)(811)
+      PRINT 212,(PAI1,1=1,6)
+      IF lOATAIN94,MP11 111989,69
+   89        DO 71 M=1,6
+      W(M)=X(M)
+   71        Y(M)=AY(M)
+      IF(DL+10.)72,76,76
+   76        OL=ADL
+   72 IF(S(7)-2(7,KEND)170,70,95
+   95        IF (Q(5)-1.0) 92,93,94
+   92        IF (AF-0.05) 97,97,80
+   97        DL=MAX1F(-50.0,DL)
+      GO TO 80
+   94 0(5)=0(5)-1.
+      GO TO 80 
+   93 DL=DLT
+      0(5)=0.0 
+      GO TO 80
+   70        DATA(No1,MP)=RC*2(2,KEND)*PR
+      DATA(N,4 ,MP)=Y(4)
+      DATA(14,30MP)=Y(4)*L(9,1)+Y(2)*STH+Y(3)*CTH 
+      DATA(No2,MP)=Y(2)*CTH—Y(3)*STH+Y(4)*L(8.1)
+      111 CONTINUE
+      IF (DVC-1.0) 42,48.49
+   48        DVC=2.0
+      ALT=ALT+ZD 
+      PSI=P$1—VT*CRV*SIGNFITAU,PSI1
+      MP=2
+      GO 10.40
+   49        CALL SORT
+      GO TO 38
+   42        VG=SORTF(1(9,1)**2+(EM*L(301)-1(8.1))**21
+      B=1(9,1)/VG 
+      813=(EM*2(3,1)-2(8,1))/VG
+      DO 102 N=1,NEND
+      IF (DATA(N,4141P)) 101.101,103
+  101       DATA(N,20MP)=0.
+      DATA(No3,MP)=0.
+      DATA(Nt1,MP)=0.
+      GO TO 102
+  103               DST=VG*(DATA(N,4,MP)—DATA(NV,40MP))
+      DATA(N,204P)=DATA(NO2.MP)+DST*BB
+      DATA(No3oMP)=DATA(No3,MP)—DST*B
+  102 CONTINUE
+      PRINT 204, KASE,EM,ALT
+      PRINT 203 
+      PRINT 208 
+      PRINT 209,(PHI(N),(DATA(N,J,MP).J=1,4).N=1,NEND)
+   38 IF(JOBS)311,310,310
+  311 CALL EXIT
+  200 FORMAT(6110)
+  201 FORMAT(F40.0,4F10.3)
+  202 FORMAT(7F10.7)
+  203 FORMAT(19HOSHOCK—GROUND DATA )
+  204 FORMAT(18H1SONIC BOOM, CASE 15,5H, M=F6.3,12H, ALTITUDE=F7.0)
+  205 FORMAT118H1SONIC bOOM, CASE 15,5H, M=F•6.3,12H, ALIITUDE=F7.007H, 
+     1 ACC=F7.315H, RC=F4.2,5H, VF=F6.3,5H. LF=F6.3/1H t5H WI=F9.1,9H, 
+     1 LENGTH=F6.1.6H, FR=F5.Lo5H, WL=F6.3.6H, ANGLE=F7.2.6H, TAU=F6.2, 
+     1 4HSEC.12H. CURVATURE=F7.3/1H0)
+  206 FORMAT (1H08X8HALTITUDE7X8HHEADWIND8X8H3IDEWIND8X8HPRESSURE4X1IHSO 
+     1UND SPEED4X11HTEMPERATURE/11X4H(F1)11X5H(FP5)11X5H(FPS)11X5H(PSF)8 
+     2X5HIFPS)9X7H(DEG F)/1- )
+  207 FORMAT (1H F15.0,3F16.30-13.3sr15.3)
+  208 FORMAT(1H0,9X,5HANGLEt7X,13HPRESSURE JUMP, 6X,IHX,15X,1HY,10X,4HTI 
+     1ME/1H ,9X,5H(DEG),10X,5H(PSF),9X,4H(F1),12X+6H(Ff),9X,5H(SEC)/1H )
+  209 FORMAT(1H ,F14.2,F15.3,2F15.0,F13.2)
+  210 FORMAT(1H(',43HHISTORY OF SHOCK SIRENG!H VARIATION, ANGLE= F6.2)
+  211 FORMAT(1H0,11X,1HZ,15XolHX,15X*1HY,8X,45HPRESSURE RATIO     PRESSU
+     IRE JUMP  PRESSURE/1H I 9X,4H(F11,12X,4H(FTI,12X,4H(F1),31X,5HtP
+     1SF),10X,5H(PSF1/1H )
+  212 FORMAT(1H OF15.0,F19.7,F17.3,F15.31
+  213 FORMAT(1H008HGROUND IS CLOSER [HAN 100 BODY LENGTHS)
+  214 FORMAT(24HOCUTOTF ALTITUDE, ANOLE=F6.21
+  215 FORMAT(42HOCUTOFF BEFORE 100 BODY LENGTHS, ALTIT(1DE=F10,2,8H, ANC* 
+     lE=F6.2)
+  216 FORMAT(56HOACCELERATION EFFECTS BEFORE 100 BODY LENGTHS, ALTITUDE= 
+     1F10.2,8H, ANGLE=F6.2)
+  217       FORMAT (38HOCOMPUTATION DOES NOT CONVERGE, ANGLE=F6.2)
+      END
+
+
+      SUBROUTINE CORR
+      DIMENSION Z(9+100)+S(9),W(9),X(9),Y(9),PJ(1),O(9),AY(9),DATAl2109
+     1 2),PHI(21)
+      COMMON Z9KENDIDCTH,STH,C,B,S,G,KO,DL,H,R1,W,XsC1,Y0F,VS,VP,C29AY,PJ
+     loBSV,BSAePHI,DATA.PR,U,AVS,JNRIDNEND,ALT,EL,O,ELIIBSC,ELHOCASE,LM0)-.N
+     10,ACC+RCIIBONG,NV,NN,JOBZisWT,T,WLIVF,FL'APRoBVP,TESE,AF,HH 
+      COMMON CRV0PSI,TAU, PStritXD.YD,ZD tVT,MP 
+
+      VALF(X)=SQRTF(1.0+(ALF+2.0*LiETA*X)**2)
+      CRV=CRV*1.0E-06
+      PSI=PSI/57.2957795
+      IF (PSI) 3,4,3
+     4 PSI=ABSF(PSI)
+      TS=SIGNFITAU,PSI) 
+      V1=SURTFMEM*Z(3,1))*CO3F(PSI)—Z(891))**2+((EM*L(3,1))*SINF(PS)) 
+     &)**2)
+      ALF=—TANF(PSI)
+      BETA=0.5*CRV*(1.0+ALF**2)**1.5
+      XD= 0:
+      OUAD=0.
+      DO 1 1=1,10
+      IF (XD) 11012011
+   11 QUAD=(VALF(0.)+4.0*VALF(XD/2.0)+VALF(XD))*XD/6.0
+   12 XI=XD
+      XD=XI—(QUAD—TS*VTI/VALF(XI)
+      IF(ABSF((XD—X1)/XD)-0.01) 2,2,1
+      CONTINUE
+      PRINT 1100,XI,XD
+ 1100 FORMAT (1H0,14HERROR MESSAGE,2X, 
+     & 53H( CORRECTION FOR CURVED FLIGHT PATH DID NOT CONVERGE./1H0)
+    2 ZD=(XD*BETA+ALF)*XD
+      YD=—TS*L(991)
+      IF (ZD) 5,5,44
+   44 IF (PSI) 45,46,45
+   45 XD=—XD
+      YD=—YD 
+      ZD=—ZD 
+      PSI = PSI—VT*CRV*TS
+      GO TO 5
+   46 PSI= TAU*VT*CRV
+      Z0=-10
+    5 PSI=PSI*57.2957795
+      RETURN 
+      END
+      
