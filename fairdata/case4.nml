@@ -1,0 +1,17 @@
+This example illustrates wind tunnel data fairing.
+The data is drag vs. lift for a 64-015 airfoil
+section at low speed and 3 million Reynolds number.
+
+&NAM1
+  xData=-1.27, -1.09, -0.90, -0.69, -0.57,
+        -0.47, -0.36, -0.22, -0.11,  0.0,
+         0.10,  0.21,  0.31,  0.39,  0.44,
+         0.55,  0.68,  0.89,  1.09,  1.23,
+  yData= 0.0206, 0.0150, 0.0119, 0.0102, 0.0089,
+         0.0080, 0.0059, 0.0049, 0.0048, 0.0047,
+         0.0048, 0.0049, 0.0050, 0.0061, 0.0079,
+         0.0090, 0.0098, 0.0118, 0.0150, 0.0200,
+ joints=-1.27, -0.75, -0.5, 0.0, 0.5, 0.75, 1.23,
+   -0.2,0.2,
+ parametric=F, closed=F/
+
