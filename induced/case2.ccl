@@ -1,0 +1,20 @@
+! This is the same data as TPLOAD11 and you can run it
+! and see that it gives the same answer. People frequently ask
+! whether the data should be input from left to right or from
+! right to left. This example shows that you throw it in any
+! old way
+title  TPLOAD11 with shuffled loading data
+span 176.43
+sref 3715.2
+terms 30
+loading
+32.2 13.57
+0 13.52
+22.05 14.44
+57.34 10.78
+74.89 7.79
+47.99 12
+52.66 11.51
+36.87 13.44
+
+

@@ -1,0 +1,32 @@
+
+
+INPUT GUIDE FOR PROGRAM INDUCED                            \induced\input.txt
+
+The program called "induced" will enable you to compute the lift and
+drag coefficients corresponding to a given span load distribution,
+either symmetric or asymmetric. This program uses an input data file
+and writes an output file describing the computed results.
+
+INPUT DATA FOR THE INDUCED DRAG PROGRAM
+
+TITLE  < any descriptive title >
+SPAN   < the full wing span, not semispan >
+SREF   < the wing reference area >
+ASYM   < if this record is present, the loading is asymmetric.
+         if this record is not present, the loading is symmetric >
+TERMS  < number of terms to be computed in the Fourier series >
+LOADING
+       < followed by any number of (y,ccl) loading pairs >
+
+note that all the data is dimensional. SPAN and all elements of loading 
+have units of length, and SREF has units of area.
+The first five records may be in any order and are optional
+If TERMS is not supplied, it is set to twice the number of loading pairs.
+If either SPAN or SREF is missing, a value of 1.0 is assumed. The title
+is blank if not supplied.
+LOADING is not optional and must be the last keyword input.
+The keywords may be upper or lower case.
+Several sample cases (case1.ccl, case2.ccl, etc. are included to 
+illustrate the usage.
+
+

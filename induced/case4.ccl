@@ -1,0 +1,12 @@
+--- data from Houghton & Brock 2nd ed. p.365-366
+--- Example 13.1
+span 12.192
+sref 27.8709
+terms 30
+loading   (note that we only use the first 2 columns in each record)
+0      1.10   0.55   49.2
+2.335  0.90   0.45   40.2
+4.31   0.642  0.321  28.7
+5.6325 0.377  0.1885 16.85
+
+
