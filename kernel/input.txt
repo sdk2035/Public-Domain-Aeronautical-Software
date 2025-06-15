@@ -1,0 +1,6 @@
+
+
+INPUT GUIDE TO KERNEL                                       \kernel\input.txt
+
+The input to kernel is described in appendix H of 
+NASA Contractor Report CR-144895 (on the CD-ROM as cr144895.pdf).
