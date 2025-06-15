@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!-- xsect.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Intersection of Two Straight Lines</title>
+<meta name="description" content="Compute the point of intersection of two
+   lines in 2D. Each line is defined by two distinct points on the line.
+   The user fills eight input fields with the numeric values of the four 
+   points. 
+   This page differs from the other pages at pdas.com as it does not read
+   an external style script and has no navigation links to connect to other
+   pages.
+   HISTORY - 
+   09Aug13  Original coding (from Delphi(Pascal) version)
+   25Aug13  Header, footer, comments
+   28Aug13  Added figure of intersection
+   09Sep13  Added DrawFilledCircle, DrawAndLabelCircle
+   03Oct13  Added additional comments to explain things
+" />
+<meta name="author" content="Ralph Carmichael, Public Domain Aeronautical Software" />
+<meta name="keywords" content="intersection, geometry, math, PDAS" />
+  
+<!-- The style section (in CSS) defines the appearance of the elements of the document -->
+<style type="text/css">
+  body { margin: 2px; color:black; background: white;
+         font-size: 120%; font-family: Helvetica,Arial,Sans-serif; }
+  header {width: 100%; border-bottom: 3px solid blue; padding: 3px; }
+  footer {width: 100%; font-size: 80%; padding: 3px; border-top: 3px solid red; }
+  h1 { font-family: Helvetica,Arial,sans-serif; text-align: center;
+       font-weight: bold; font-size: 2.0em; color: blue; margin-top: 0.5em; }
+
+  fieldset.point1 {color: red; margin: 5px; }
+  fieldset.point2 {color: blue; margin: 5px; }
+  fieldset.point3 {color: green; margin: 5px; }
+  fieldset.point4 {color: orange; margin: 5px; } 
+  #ComputeButton {margin: 20px; background-color: red; font: 24px arial;}
+  
+  div.banner {width: 100%; background: blue; color: white; text-align: right;
+    font-size: 120%; font-family: Verdana,Arial,Helvetica, sans-serif; }
+</style>
+
+<script>
+
+function ComputeIntersection() {
+  // Step One - 
+  //   get the 8 input fields from the HTML document into local text variables
+  var x1field = document.getElementById("x1field").value;
+  var y1field = document.getElementById("y1field").value;
+  var x2field = document.getElementById("x2field").value;
+  var y2field = document.getElementById("y2field").value;
+  var x3field = document.getElementById("x3field").value;
+  var y3field = document.getElementById("y3field").value;
+  var x4field = document.getElementById("x4field").value;
+  var y4field = document.getElementById("y4field").value;
+
+  // Step Two - convert the text fields to numbers and validate. Flag any errors.
+  var x1 = Number(x1field);
+  if (isNaN(x1)) { alert("x1 is not a number"); return;}
+  var y1 = Number(y1field);
+  if (isNaN(y1)) { alert("y1 is not a number"); return; }
+  var x2 = Number(x2field);
+  if (isNaN(x2)) { alert("x2 is not a number"); return; }
+  var y2 = Number(y2field);
+  if (isNaN(y2)) { alert("y2 is not a number"); return; }
+  var x3 = Number(x3field);
+  if (isNaN(x3)) { alert("x3 is not a number"); return; }
+  var y3 = Number(y3field);
+  if (isNaN(y3)) { alert("y3 is not a number"); return; }
+  var x4 = Number(x4field);
+  if (isNaN(x4)) { alert("x4 is not a number"); return; }
+  var y4 = Number(y4field);
+  if (isNaN(y4)) { alert("y4 is not a number"); return; }
+
+  // Step Three - Check for error conditions. If none, compute the intersection
+  var  a1 = y2-y1;
+  var  b1 = x1-x2;
+  var  c1 = x2*y1 - x1*y2;  //    a1*x + b1*y + c1 = 0 is line 1 
+  if ( (a1===0) && (b1===0) ) 
+    { alert("Points 1 and 2 of line 1 are not distinct."); return; }
+
+  var  a2 = y4-y3;
+  var  b2 = x3-x4;
+  var  c2 = x4*y3 - x3*y4;  //   a2*x + b2*y + c2 = 0 is line 2 
+  if ( (a2===0) && (b2===0) ) 
+    { alert("Points 1 and 2 of line 2 are not distinct."); return; }
+  
+  var  denom = a1*b2 - a2*b1;
+  if (denom == 0) { alert("The lines are parallel");  return;}
+
+  var  x=(b1*c2 - b2*c1)/denom;   // (x,y) is the intersection
+  var  y=(a2*c1 - a1*c2)/denom;
+  
+  // Step Four - display the answer
+  alert("The intersection is (" + 
+    x.toPrecision(6) +",  " + y.toPrecision(6) + ")" );
+
+  // Step Five - display the line segments and the intersection graphically
+  SketchIntersection(x1,y1,x2,y2,x3,y3,x4,y4,x,y);
+} // --------------------------------------- End of function ComputeIntersection
+
+function DrawFilledCircle(ctx, x,y,radius, border, color) {
+  ctx.beginPath();
+  ctx.arc(x,y,radius,0,2*Math.PI,true);
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.fillStyle = "black";  // always return with black
+  if (border) ctx.stroke();
+}   // ---------------------------------------- End of function DrawFilledCircle
+
+function DrawAndLabelCircle(ctx, x,y,radius,border,color, xoffset,legend) {
+  DrawFilledCircle(ctx, x,y,radius, border,color);
+  ctx.textBaseline = "middle";
+  ctx.font = "14px sans-serif";
+  ctx.fillStyle = "black";
+  ctx.fillText(legend, x+xoffset,y);
+}   // -------------------------------------- End of function DrawAndLabelCircle
+
+function SketchIntersection (x1,y1,x2,y2,x3,y3,x4,y4,x,y) {
+  const RADIUS = 5;
+  const LEFTMARGIN = 100;
+  const TOPMARGIN = 20;
+  const XOFFSET = 20;
+
+// define the smallest box that will contain all 5 points.
+  var xmin = Math.min(x1,x2,x3,x4,x);
+  var xmax = Math.max(x1,x2,x3,x4,x);
+  var ymin = Math.min(y1,y2,y3,y4,y);
+  var ymax = Math.max(y1,y2,y3,y4,y);
+
+// get the screen coordinates of the five points
+  var xscale = 400/(xmax-xmin);
+  var yscale = 300/(ymax-ymin);
+  xscreen1 = LEFTMARGIN + xscale*(x1-xmin)
+  xscreen2 = LEFTMARGIN + xscale*(x2-xmin)
+  xscreen3 = LEFTMARGIN + xscale*(x3-xmin)
+  xscreen4 = LEFTMARGIN + xscale*(x4-xmin)
+  xscreen  = LEFTMARGIN + xscale*(x-xmin)
+  yscreen1 = TOPMARGIN  + yscale*(ymax-y1)
+  yscreen2 = TOPMARGIN  + yscale*(ymax-y2)  
+  yscreen3 = TOPMARGIN  + yscale*(ymax-y3)
+  yscreen4 = TOPMARGIN  + yscale*(ymax-y4)
+  yscreen  = TOPMARGIN  + yscale*(ymax-y)
+
+// this is a bit of HTML 5 jargon. You need to get the canvas and define
+// its context. Everything you do is an action applied to the context.
+  var a_canvas = document.getElementById("intersectionImage");
+  var a_context = a_canvas.getContext("2d");
+  a_context.clearRect(0,0, a_canvas.width, a_canvas.height);
+
+  a_context.beginPath();
+  a_context.moveTo(xscreen1,yscreen1);
+  a_context.lineTo(xscreen2,yscreen2);
+  a_context.moveTo(xscreen3,yscreen3);
+  a_context.lineTo(xscreen4,yscreen4);
+  a_context.strokeStyle = "black";
+  a_context.stroke();
+
+// now put colored dots at the endpoints and the intersection  
+
+  DrawFilledCircle(a_context, xscreen1,yscreen1,RADIUS,false,"red");
+  DrawFilledCircle(a_context, xscreen2,yscreen2,RADIUS,false,"blue");
+  DrawFilledCircle(a_context, xscreen3,yscreen3,RADIUS,false,"green");
+  DrawFilledCircle(a_context, xscreen4,yscreen4,RADIUS,false,"orange");
+  DrawFilledCircle(a_context, xscreen, yscreen, RADIUS,true,"white");
+
+// place a legend defining the four endpoints and the intersection
+// Each label is a left paren followed by the x-coor (as a string) followed by
+//  a comma followed by the y-coor (as a string) followed by a right paren.
+// For the four endpoints, use the original strings from the input fields.
+// For the intersection, convert the computed numbers to strings with toPrecision.
+  var coor = "(" + document.getElementById("x1field").value + "," +
+                   document.getElementById("y1field").value + ")";
+  DrawAndLabelCircle(a_context, 
+    LEFTMARGIN+180,TOPMARGIN+320,RADIUS,false,"red",XOFFSET,coor);
+
+  coor = "(" + document.getElementById("x2field").value + "," +
+               document.getElementById("y2field").value + ")";
+  DrawAndLabelCircle(a_context, 
+    LEFTMARGIN+180,TOPMARGIN+340,RADIUS,false,"blue",XOFFSET,coor);
+
+  coor = "(" + document.getElementById("x3field").value + "," +
+               document.getElementById("y3field").value + ")";
+  DrawAndLabelCircle(a_context, 
+    LEFTMARGIN+180,TOPMARGIN+360,RADIUS,false,"green",XOFFSET,coor);
+
+  coor = "(" + document.getElementById("x4field").value + "," +
+               document.getElementById("y4field").value + ")";
+  DrawAndLabelCircle(a_context, 
+    LEFTMARGIN+180,TOPMARGIN+380,RADIUS,false,"orange",XOFFSET,coor);
+
+  coor = "(" + x.toPrecision(5) + "," +
+               y.toPrecision(5) + ")";
+  DrawAndLabelCircle(a_context, 
+    LEFTMARGIN+180,TOPMARGIN+400,RADIUS,true,"white",XOFFSET,coor);
+
+} // ---------------------------------------- End of function SketchIntersection
+</script>
+
+</head>
+
+<body>
+
+<div class="banner">Public Domain Aeronautical Software (PDAS) &nbsp; </div>
+<header><h1>Intersection of Two Straight Lines</h1></header>
+
+<!-- This is an example of a form that is never submitted.  All of the computation is done
+     by the included javascript functions. No server calculations needed. -->
+
+<p> Fill numerical values for each coordinate. Then click (press) the Compute button.</p>
+
+<form>
+  <fieldset class="line1">
+    <legend>Line 1</legend>
+      <fieldset class="point1">
+        <legend>Point 1</legend>
+          <label for="x1field">x1</label>
+          <input type="text" name="x1field" id="x1field" value="3" autofocus> <br />
+          <label for="y1field">y1</label>
+          <input type="text" name="y1field" id="y1field" value="7"> <br />
+      </fieldset>
+      <fieldset class="point2">
+        <legend>Point 2</legend>
+          <label for="x2field">x2</label>
+          <input type="text" name="x2field" id="x2field" value="9"> <br />
+          <label for="y2field">y2</label>
+          <input type="text" name="y2field" id="y2field" value="4"> <br />
+      </fieldset>
+  </fieldset>
+
+  <fieldset class="line2">
+    <legend>Line 2</legend>
+      <fieldset class="point3">
+        <legend>Point 1</legend>
+          <label for="x3field">x3</label>
+          <input type="text" name="x3field" id="x3field" value="4"><br />
+          <label for="y3field">y3</label>
+          <input type="text" name="y3field" id="y3field" value="2"><br />
+      </fieldset>
+      <fieldset class="point4">
+        <legend>Point 2</legend>
+          <label for="x4field">x4</label>
+          <input type="text" name="x4field" id="x4field" value="8"><br />
+          <label for="y4field">y4</label>
+          <input type="text" name="y4field" id="y4field" value="9"><br />
+      </fieldset>
+  </fieldset>
+
+<!-- After all input fields are filled, click the Compute button. -->
+  <input id="ComputeButton" type="button" 
+    value="Compute" onclick="ComputeIntersection();" />
+  
+</form>
+
+<!-- Set aside a space 520 by 450 for the picture -->
+<canvas id="intersectionImage" width="520" height="450"></canvas>
+
+<footer>
+<a href="order.html">Get a copy</a> of all the programs from
+<cite>Public Domain Computer Programs for the Aeronautical Engineer.</cite><br />
+Last updated: <time datetime="2021-04-23">2021 Apr 23</time>
+by Ralph Carmichael, pdaerowebmaster AT gmail DOT com
+</footer>
+
+<div class="banner">Public Domain Aeronautical Software (PDAS) &nbsp; </div>
+</body></html>
+
