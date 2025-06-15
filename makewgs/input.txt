@@ -1,0 +1,102 @@
+
+
+INPUT GUIDE TO MAKEWGS                                     \makewgs\input.txt
+
+This program works by reading a file of input commands and making
+wings or bodies that satisify the defining parameters. The two
+command words WING and BODY actually create a network. They will
+use the parameters that have been previously defined. If more
+components are desired, the commands that have already been defined
+will remain in effect until superceded.
+
+Command words are:
+
+BODY    completes a body
+WING    completes a wing
+TITLE   the name of the LaWGS object
+SHAPE     the body shape; =0 cone; =1 parabolic; =2 Sears-Haack;
+          =3 von Karman ogive; =4 ellipsoid
+NFS       number of fugelage stations defining the body
+NTHETA    number of longitudinal lines on HALF the body        
+ROWS      number of rows of panels on a wing
+COLS      number of columns of panels on a wing
+IROOT     root spacing rule
+ITIP      tip spacing rule
+ISPAN     span spacing rule
+SECTION   airfoil section code; =0 parabolic arc; =1 double wedge;
+          =2 30-70 hex; =4 wedge (thick base); =5 NACA 4-digit
+SECT      alternate spelling for SECTION      
+LEFTTIP   logical variable. Make a network that closes the left tip
+          of the current wing network. TCROOT must be > 0 and the
+          length of the root chord must be positive. 
+          The  normal vector (PanAir convention) will point to the left.
+RIGHTTIP  logical variable. Make a network that closes the right tip
+          of the current wing network. TCTIP must be > 0 and the
+          length of the tip chord must be positive.
+          The normal vector (PanAir convention) will point to the right.
+LNOSE     length of the nose
+LBODY     length of the body
+LTAIL     length of the afterbody or tail section
+RNOSE     radius at the start of the nose
+RADIUS    radius of the cylindrical portion of the body 
+RBASE     radius at the end of the tail section of the body
+XNOSE     x-coordinate of the nose
+ZNOSE     z-coordinate of the nose
+ZBASE     z-coordinate of the end of the tail
+YNOSE     y-coordinate of the axis of the  body
+ROOTLE    x-coordinate of the  root leading edge
+LEROOT    alternate spelling for ROOTLE
+ROOTTE    x-coordinate of the root trailing edge
+TEROOT    alternate spelling of ROOTTE
+ROOTY     y-coordinate of the root chord
+YROOT     alternate spelling of ROOTY
+ROOTZ     z-coordinate of the root chord
+ZROOT     alternate spelling of ROOTZ
+TIPLE     x-coordinate of the tip leading edge
+LETIP     alternate spelling of TIPLE 
+TIPTE     x-coordinate of the tip trailing edge
+TETIP     alternate spelling of TIPTE 
+TIPY      y-coordinate of the tip chord
+YTIP      alternate spelling of YTIP
+TIPZ      z-coordinate of the tip chord
+ZTIP      alternate spelling of ZTIP
+TCROOT    t/c of the root chord  (fraction, not percent)
+TCTIP     t/c of the tip chord  (fraction, not percent)
+
+If not specified, some of the above quantities have default values:
+
+ nfs = 21
+
+ lNose   = 1.0
+ lBody   = 2.0
+ lTail   = 0.0
+ rNose   = 0.0
+ radius  = 1.0
+ rbase   = 0.0
+ xNose   = 0.0
+ yNose   = 0.0
+ zNose   = 0.0
+ zBase   = 0.0
+ shape = 1
+ nfs = 11
+ ntheta    = 5
+ asym      = .FALSE.
+
+ rootle = 0.0
+ rootte = 1.0
+ rooty  = 0.0
+ rootz  = 0.0
+ tiple  = 0.0
+ tipte  = 1.0
+ tipy   = 1.0
+ tipz   = 0.0
+ tcroot = 0.0
+ tctip  = 0.0
+ rows     = 4
+ cols     = 4
+ iroot    = 0
+ itip     = 0
+ ispan    = 0
+ sect     = 1
+ lefttip  = .FALSE.
+ righttip = .FALSE.
