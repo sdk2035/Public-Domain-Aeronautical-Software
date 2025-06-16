@@ -1,0 +1,40 @@
+B-2 wing (approximate)
+From the sketch of the wing in cases.pdf, one can see that the right wing is
+defined by four chords. The root chord at y=0 with xle=0 has a chord of 130.
+The tip chord, at y=120 with xle=100 has a chord of 0. The other two chords
+require a little calculation. The third chord at y=90 has xte=125, but we
+do not have the x-coordinate of the leading edge. This is exactly the sort 
+of problem for which LinIntrp was designed. The leading edge is defined by
+points (0,0,0) and (100,120,0). By specifying the y-coordinate (=90) of the 
+xle point we desire, we immediately see that it is 75. The second chord at
+y=48 has xte=90 and if we insert y=48 into the y-input box for LinInterp, we
+see that its leading edge x-coordinate is 40. So, the input data for getMAC is:
+
+&chord   y=0, xle=0,   c=130/
+&chord  y=48, xle=40,  c=50/
+&chord  y=90, xle=75,  c=50/
+&chord y=120, xle=100, c=0/
+
+
+F-117 wing (approximate)
+The root chord is defined by xle=0, y=0, c=1120. The tip chord is at 
+xle=860,y=500 and has c=0. The other two chords must be computed. If we use
+LinIntrp and define the leading edge with the two points at the root and tip
+chords, then inserting y=200 gives xle=344 and hence c=400. Similarly, setting
+y=375 gives xle=645 and again c=400.
+
+The input to getMac becomes
+   &chord    y=0, xle=0,   c=1120/
+   &chord  y=200, xle=344, c=400/
+   &chord  y=375, xle=645, c=400/
+   &chord  y=500, xle=860, c=0/
+
+The oblique wing case is one where you know all the chords. The symmetrical
+cases use the chords on the right wing only. You could put in all of the chords,
+both left and right and you would get the same answers for xle and xte of the
+mean aerodynamic chord. Of course, it would have y=0. The area printed would be
+that of the whole wing. When you use getMac on the right wing only, the area
+printed is that of the right wing only.
+
+
+

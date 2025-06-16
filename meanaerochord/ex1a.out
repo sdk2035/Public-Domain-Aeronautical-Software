@@ -1,0 +1,15 @@
+This program was compiled by GCC version 9.3.0 using the options 
+-mtune=generic -march=x86-64 -fpre-include=/usr/include/finclude/math-vector-fortran.h
+ Date and time of execution 2022Jan11 13:18
+ MEAN AERODYNAMIC CHORD DEFINED BY ex1a.nml
+  #        y        xle          c          xte
+  1     0.00000     0.00000   400.00000   400.00000
+  2  1000.00000   600.00000   200.00000   800.00000
+  
+  area of wing=        300000.0000
+  length of MAC=          311.1111
+  y of MAC=               444.4444
+  xle of MAC=             266.6667
+  xte of MAC=             577.7778
+  x of c/4 of MAC=        344.4444
+ Values are for right wing. For symmetrical configuration, double the area (but NOT the length)

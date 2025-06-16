@@ -1,0 +1,3 @@
+&chord y=-1000, xle=600, c=200/
+&chord y=0,     xle=0,   c=400/
+&chord y=1000,  xle=600, c=200/

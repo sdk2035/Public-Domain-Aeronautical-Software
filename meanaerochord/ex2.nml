@@ -1,0 +1,4 @@
+--- This example is intended to resemble an F-16
+   &chord  y=200, xle=100, c=1000/      
+   &chord  y=400, xle=500, c=600/
+   &chord y=1000, xle=900, c=200/

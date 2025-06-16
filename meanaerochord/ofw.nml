@@ -1,0 +1,19 @@
+This was a preliminary design for an oblique flying wing
+&chord  y=-615,  xle= 1860, c=  70/
+&chord  y=-576,  xle= 1713, c= 244/
+&chord  y=-500,  xle= 1426, c= 522/
+&chord  y=-412,  xle= 1145, c= 709/
+&chord  y=-316,  xle=  869, c= 854/
+&chord  y=-218,  xle=  594, c= 999/
+&chord  y=  29,  xle=  -72, c=1308/
+&chord  y= 182,  xle= -450, c=1444/
+&chord  y= 347,  xle= -812, c=1443/
+&chord  y= 517,  xle=-1167, c=1376/
+&chord  y= 688,  xle=-1476, c=1262/
+&chord  y= 745,  xle=-1578, c=1223/
+&chord  y= 802,  xle=-1681, c=1185/
+&chord  y= 918,  xle=-1819, c= 764/
+&chord  y= 980,  xle=-1798, c= 264/
+
+
+

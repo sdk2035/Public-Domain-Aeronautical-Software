@@ -1,0 +1,25 @@
+INPUT DATA FOR MEANAEROCHORD                                       /meanaerochord/input.txt
+
+GetMAC is a Modern Fortran program that uses namelist input.
+Each chord of the wing requires a &chord namelist record.
+There are three variables that may appear on the 
+input record:
+   y   the y-coordinate of the chord
+  xle  the x-coordinate of the leading edge of the chord
+   c   the length of the chord
+
+Any units may be used. Of course, the same units must be 
+used for all three variables.
+
+In accordance with the Fortran standard (as of 1990), the
+namelist is terminated with a slash (/).
+Any text preceeding the &chord text is ignored as commentary.
+
+An example case:
+
+
+This is a wing that resembles the B-2
+&chord  y=0,  xle=0,   c=130/
+&chord  y=48, xle=40,  c=50/
+&chord  y=90, xle=75,  c=50/
+&chord y=120, xle=100, c=0/
