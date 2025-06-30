@@ -1,0 +1,15 @@
+
+
+INPUT GUIDE FOR PROGRAM OPTTRAJ                            \opttraj\input.txt
+
+There is no documentation or instructions for the use of this program
+in the NASA distribution. But we can figure out quite a bit just by
+reading the source code. All I can say is that I will try to nail down
+just what the input files represent. I have only been working on this
+code for a short time. Added 1 Jan 2004: Well it has been some time
+now and I still don't understand most of the variables. But I am not
+giving up. Somehow, this never gets to the top of the priority stack.
+
+
+
+
