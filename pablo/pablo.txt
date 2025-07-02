@@ -1,0 +1,44 @@
+PABLO.TXT  USAGE
+
+Program facilities :
+
+Three different kinds of geometries are implemented : 
+- Ellipse with prescribed axis ratio,
+- NACA 4 digits airfoil library
+- General airfoil library.
+
+In the two first cases, the shape of the object is defined
+analytically. The user simply has to enter the proper information,
+ellipse axis ratio or Naca 4 digits.
+
+In the last case, the airfoils are defined in data files using
+a number of discrete points. Around 70 airfoils taken from well
+known shape libraries are already recorded and ready to use. New
+data files can be added to the library with any airfoil 
+coordinates except that the airfoil trailing edge must be sharp.
+
+Three different kinds of singularities are implemented:
+- Constant-strength sources,
+- Constant-strength doublets,
+- Linear vortices.
+
+The user may change the flow angle of attack and Reynolds Number,
+as well as the number of panels used in the discretization.
+
+The solution computed by the program features : 
+- The Cp distribution,
+- The aerodynamics coefficients CL, CD and CM,
+- The coordinate of the center of pressure Xcp,
+- The location of transition and eventual laminar or turbulent
+  separation,
+- The distribution of the boundary layer parameters.
+
+Miscellaneous :
+
+It is possible to zoom in and out on the 2D plot. Get
+information by entering "help zoom" in Matlab.
+It is also possible to hold on the previous plot by clicking on
+the button "Hold on (Cp)"
+This is allowed only between solutions on the same geometry and
+at the same angle of attack.
+
